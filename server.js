@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 8080; // Puedes cambiar el puerto si es necesario
+const PORT = process.env.PORT || 3000;// Puedes cambiar el puerto si es necesario
 
 const regionsAndCommunes = {
     'Región de Tarapacá': ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Camiña', 'Colchane', 'Huara', 'Pica'],
@@ -20,10 +20,10 @@ const regionsAndCommunes = {
     'Región de Magallanes y de la Antártica Chilena': ['Punta Arenas', 'Laguna Blanca', 'Río Verde', 'San Gregorio', 'Cabo de Hornos', 'Antártica', 'Porvenir', 'Primavera', 'Timaukel', 'Natales', 'Torres del Paine']
 };
 
-app.get('', (req, res) => {
-  res.json(regionsAndCommunes);
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
+app.get('/api/regions-and-communes', (req, res) => {
+    res.json(regionsAndCommunes);
+  });
+  
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+  });
