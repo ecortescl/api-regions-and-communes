@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000; // Puedes cambiar el puerto si es necesario
+const PORT = 8080; // Puedes cambiar el puerto si es necesario
 
 const regionsAndCommunes = {
     'Región de Tarapacá': ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Camiña', 'Colchane', 'Huara', 'Pica'],
